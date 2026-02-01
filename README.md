@@ -16,18 +16,18 @@ Before running the app, ensure you have your local environment ready:
 
 Use these commands to manage the application:
 
-• Start the App: docker-compose up --build
+• Start the App: 'docker-compose up --build'
 
-• Stop Services: docker-compose down
+• Stop Services: 'docker-compose down'
 
-• Train the AI Model: docker-compose run --rm web python model_trainer.py
+• Train the AI Model: 'docker-compose run --rm web python model_trainer.py'
 
 ## Git Branching Workflow
 
 To practice professional development habits, always work on a branch:
 
-1. Create a new branch: git checkout -b feature/your-task-name
+1. Create a new branch: 'git checkout -b feature/your-task-name'
 
-2. Save your progress: git add . git commit -m "Description of changes"
+2. Save your progress: 'git add . git commit -m "Description of changes"'
 
-3. Push to GitHub: git push origin feature/your-task-name
+3. Push to GitHub: 'git push origin feature/your-task-name'
