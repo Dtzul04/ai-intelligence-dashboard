@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <h1>Data Dashboard</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Key Metrics</h2>
+            <div>
+                <article>
+                    <h3>Total Users</h3>
+                    <p>12,543</p>
+                </article>
+                <article>
+                    <h3>Revenue</h3>
+                    <p>$45,231</p>
+                </article>
+                <article>
+                    <h3>Active Sessions</h3>
+                    <p>1,234</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Recent Data</h2>
+            <tbody class="text-gray-600 text-sm font-light">
+                {% for row in recent_data %}
+                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                    <td class="py-3 px-6 text-left whitespace-nowrap">{{ row['Date'] }}</td>
+                    <td class="py-3 px-6 text-left">{{ row['Visitors'] }}</td>
+                    <td class="py-3 px-6 text-left">{{ row['Sales'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </section>
+
+        <section>
+            <h2>Activity</h2>
+            <ul>
+                <li>New order completed - 5 minutes ago</li>
+                <li>User registration - 15 minutes ago</li>
+                <li>Product updated - 1 hour ago</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Data Dashboard</p>
+    </footer>
+</body>
+</html>
