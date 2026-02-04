@@ -21,24 +21,24 @@
         <section class="bg-[#5C7A7B] flex-[1] p-10 rounded-[40px] shadow-xl flex flex-col">
             <h2 class="text-white font-['Maharlika'] text-2xl text-center underline mb-6">Enter Details</h2>
             
-            <form class="flex-grow flex flex-col justify-center space-y-4">
+            <form action="/predict" method="post" class="flex-grow flex flex-col justify-center space-y-4">
                 <div class="flex justify-between items-center px-4">
                     <label class="text-white font-['Maharlika'] text-lg pr-6">Tenure:</label>
-                    <input type="number" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                    <input type="number" name="tenure" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
                 </div>
                 <div class="flex justify-between items-center px-4">
                     <label class="text-white font-['Maharlika'] text-lg pr-6">Monthly Charges:</label>
-                    <input type="number" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                    <input type="number" name="monthly_charges" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
                 </div>
                 <div class="flex justify-between items-center px-4">
                     <label class="text-white font-['Maharlika'] text-lg pr-6">Contract Type:</label>
-                    <select class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
-                        <option>Month-to-month</option>
-                        <option>One year</option>
-                        <option>Two year</option>
+                    <select name="contract_type" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                        <option value="0">Month-to-month</option>
+                        <option value="1">One year</option>
+                        <option value="2">Two year</option>
                     </select>
                 </div>
-                <button type="button" class="bg-white text-[#5C7A7B] font-['Maharlika'] px-8 py-2 rounded-full font-bold shadow-end hover:bg-gray-200 transition">
+                <button type="submit" class="bg-white text-[#5C7A7B] font-['Maharlika'] px-8 py-2 rounded-full font-bold shadow-end hover:bg-gray-200 transition">
                     PREDICT
                 </button>
             </form>
@@ -52,11 +52,12 @@
             </div>
         </section>
 
-    </div> </main>
+    </div> 
+</main>
 
-    <footer>
-        © 2026 Daniel Tzul
-    </footer>
+<footer class="mt-auto pb-6 font-['Maharlika'] text-gray-600">
+    © 2026 Daniel Tzul
+</footer>
 
 </body>
 </html>
