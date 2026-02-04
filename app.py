@@ -1,18 +1,18 @@
-from flask import Flask, render_template
-import pandas as pd
-import os
+from flask import Flask, render_template, request
+import joblib 
+import numpy as np
 
 app = Flask(__name__)
+model = joblib.load('models/logistic_regression_model.pkl')
 
 @app.route('/')
 def index():
-    csv_path = os.path.join('data', 'your_file.csv')
-    
-    df = pd.read_csv(csv_path)
-    
-    recent_data = df.head(5).to_dict(orient='records')
-    
-    return render_template('index.html', recent_data=recent_data)
+    return render_template('index.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    # This is where we will grab the data next time
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
