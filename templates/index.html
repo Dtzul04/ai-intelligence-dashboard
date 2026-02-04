@@ -2,59 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Dashboard</title>
+    <title>Customer Churn Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Maharlika&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Data Dashboard</h1>
+<body class="bg-[#c7e8eb] min-h-screen flex flex-col items-center">
+
+    <header class="mt-10">
+        <div class="bg-[#5C7A7B] p-14 rounded-[50%] shadow-xl w-80 h-40 flex items-center justify-center">
+            <h1 class="text-center text-3xl font-bold text-white font-['Maharlika']">Customer Churn Intelligence</h1>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Key Metrics</h2>
-            <div>
-                <article>
-                    <h3>Total Users</h3>
-                    <p>12,543</p>
-                </article>
-                <article>
-                    <h3>Revenue</h3>
-                    <p>$45,231</p>
-                </article>
-                <article>
-                    <h3>Active Sessions</h3>
-                    <p>1,234</p>
-                </article>
+ <main class="flex-grow w-full flex justify-center items-start pt-10">
+
+    <div class="flex flex-row items-stretch gap-10 mt-12 w-full max-w-6xl px-10 min-h-[400px]">
+
+        <section class="bg-[#5C7A7B] flex-[1] p-10 rounded-[40px] shadow-xl flex flex-col">
+            <h2 class="text-white font-['Maharlika'] text-2xl text-center underline mb-6">Enter Details</h2>
+            
+            <form class="flex-grow flex flex-col justify-center space-y-4">
+                <div class="flex justify-between items-center px-4">
+                    <label class="text-white font-['Maharlika'] text-lg pr-6">Tenure:</label>
+                    <input type="number" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                </div>
+                <div class="flex justify-between items-center px-4">
+                    <label class="text-white font-['Maharlika'] text-lg pr-6">Monthly Charges:</label>
+                    <input type="number" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                </div>
+                <div class="flex justify-between items-center px-4">
+                    <label class="text-white font-['Maharlika'] text-lg pr-6">Contract Type:</label>
+                    <select class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                        <option>Month-to-month</option>
+                        <option>One year</option>
+                        <option>Two year</option>
+                    </select>
+                </div>
+                <button type="button" class="bg-white text-[#5C7A7B] font-['Maharlika'] px-8 py-2 rounded-full font-bold shadow-end hover:bg-gray-200 transition">
+                    PREDICT
+                </button>
+            </form>
+        </section>
+
+        <section class="bg-[#5C7A7B] flex-[2] p-10 rounded-[40px] shadow-xl flex flex-col">
+            <h2 class="text-white font-['Maharlika'] text-2xl text-center underline mb-6">Prediction Result</h2>
+            <div class="bg-white flex-grow rounded-[20px] p-8 flex flex-col items-center justify-center text-[#5C7A7B]">
+                <h3 class="font-['Maharlika'] text-3xl font-bold">Status Results</h3>
+                <p class="font-['Maharlika'] text-lg mt-2">Sentence Explanation</p>
             </div>
         </section>
 
-        <section>
-            <h2>Recent Data</h2>
-            <tbody class="text-gray-600 text-sm font-light">
-                {% for row in recent_data %}
-                <tr class="border-b border-gray-200 hover:bg-gray-100">
-                    <td class="py-3 px-6 text-left whitespace-nowrap">{{ row['Date'] }}</td>
-                    <td class="py-3 px-6 text-left">{{ row['Visitors'] }}</td>
-                    <td class="py-3 px-6 text-left">{{ row['Sales'] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </section>
-
-        <section>
-            <h2>Activity</h2>
-            <ul>
-                <li>New order completed - 5 minutes ago</li>
-                <li>User registration - 15 minutes ago</li>
-                <li>Product updated - 1 hour ago</li>
-            </ul>
-        </section>
-    </main>
+    </div> </main>
 
     <footer>
-        <p>&copy; 2026 Data Dashboard</p>
+        © 2026 Daniel Tzul
     </footer>
+
 </body>
 </html>
