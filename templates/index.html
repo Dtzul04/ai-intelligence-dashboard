@@ -24,21 +24,21 @@
             <form action="/predict" method="post" class="flex-grow flex flex-col justify-center space-y-4">
                 <div class="flex justify-between items-center px-4">
                     <label class="text-white font-['Maharlika'] text-lg pr-6">Tenure:</label>
-                    <input type="number" name="tenure" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                    <input type="number" name="tenure" value="{{ tenure|default('') }}" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner" required>
                 </div>
                 <div class="flex justify-between items-center px-4">
                     <label class="text-white font-['Maharlika'] text-lg pr-6">Monthly Charges:</label>
-                    <input type="number" name="monthly_charges" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
+                    <input type="number" step="0.01" name="monthly_charges" value="{{ monthly_charges|default('') }}" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner" required>
                 </div>
                 <div class="flex justify-between items-center px-4">
                     <label class="text-white font-['Maharlika'] text-lg pr-6">Contract Type:</label>
                     <select name="contract_type" class="w-32 rounded-md border-none px-2 py-1 text-black shadow-inner">
-                        <option value="0">Month-to-month</option>
-                        <option value="1">One year</option>
-                        <option value="2">Two year</option>
+                        <option value="0" {% if contract == 0 %}selected{% endif %}>Month-to-month</option>
+                        <option value="1" {% if contract == 1 %}selected{% endif %}>One year</option>
+                        <option value="2" {% if contract == 2 %}selected{% endif %}>Two year</option>
                     </select>
                 </div>
-                <button type="submit" class="bg-white text-[#5C7A7B] font-['Maharlika'] px-8 py-2 rounded-full font-bold shadow-end hover:bg-gray-200 transition">
+                <button type="submit" class="bg-white text-[#5C7A7B] font-['Maharlika'] px-8 py-2 rounded-full font-bold shadow-md hover:bg-gray-200 transition">
                     PREDICT
                 </button>
             </form>
@@ -47,8 +47,16 @@
         <section class="bg-[#5C7A7B] flex-[2] p-10 rounded-[40px] shadow-xl flex flex-col">
             <h2 class="text-white font-['Maharlika'] text-2xl text-center underline mb-6">Prediction Result</h2>
             <div class="bg-white flex-grow rounded-[20px] p-8 flex flex-col items-center justify-center text-[#5C7A7B]">
-                <h3 class="font-['Maharlika'] text-3xl font-bold">Status Results</h3>
-                <p class="font-['Maharlika'] text-lg mt-2">Sentence Explanation</p>
+                
+                {% if prediction %}
+                    <p class="font-['Maharlika'] text-lg mb-2 italic text-gray-500">Based on the data provided:</p>
+                    <h3 class="font-['Maharlika'] text-4xl font-bold">
+                        {{ prediction }}
+                    </h3>
+                {% else %}
+                    <h3 class="font-['Maharlika'] text-xl">Please enter your input to see result.</h3>
+                {% endif %}
+
             </div>
         </section>
 
