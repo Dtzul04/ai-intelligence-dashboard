@@ -3,7 +3,7 @@
 A professional, containerized Flask application for customer churn prediction using Scikit-Learn, Pandas, and Tailwind CSS.
 
 ## 🚀 Live Demo
-**Project URL:** [ai-intelligence-dashboard-production.up.railway.app]
+**Project URL:** https://ai-intelligence-dashboard.onrender.com/
 
 ## 🛠 Project Setup
 Before running the app locally, ensure your environment is ready:
