@@ -22,11 +22,14 @@ Use these commands to manage the application:
 • Stop Services: `docker-compose down`
 • Train the AI Model: `docker-compose run --rm web python model_trainer.py`
 
-## 📦 Deployment (Railway)
-This project is Docker-ready for deployment:
-1. Push changes to GitHub.
-2. Connect repository to Railway.app.
-3. Railway will automatically build the container using the `Dockerfile`.
+## 📦 Deployment (Render)
+This project is configured for easy deployment on Render:
+1. Push your latest changes to GitHub.
+2. Log in to **Render.com** and create a new **Web Service**.
+3. Connect your GitHub repository.
+4. Select **Docker** as the Runtime.
+5. Add your Environment Variables (MYSQL credentials) in the Render 'Environment' tab.
+6. Render will automatically build and deploy your container.
 
 ## 🌳 Git Branching Workflow
 Always work on a feature branch to keep the main branch stable:
